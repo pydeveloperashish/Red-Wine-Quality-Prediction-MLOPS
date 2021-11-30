@@ -14,6 +14,8 @@ git add .
 
 git commit -m "first commit"
 
+one liner:- git add . && git commit -m "params added"
+
 git status
 
 Push to your repo
