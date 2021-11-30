@@ -2,3 +2,4 @@ dvc
 dvc[gdrive]
 scikit-learn
 pandas
+joblib
