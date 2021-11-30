@@ -1,6 +1,6 @@
 create seprate env
 
-install requirements.txt
+write basic requirements.txt
 
 download red wine quality data
 
@@ -14,7 +14,7 @@ git add .
 
 git commit -m "first commit"
 
-one liner:- git add . && git commit -m "params added"
+one liner:- git add . && git commit -m "message"
 
 git status
 
