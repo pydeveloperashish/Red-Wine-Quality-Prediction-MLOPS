@@ -1,8 +1,11 @@
+THIS PROJECT IS UNDER DEVELOPMENT
+
 create seprate env
 
 write basic requirements.txt
 
 download red wine quality data
+
 
 git init
 
