@@ -7,3 +7,5 @@ pytest
 tox
 wrapt
 flake8
+flask
+gunicorn
