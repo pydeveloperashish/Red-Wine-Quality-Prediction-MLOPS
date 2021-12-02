@@ -5,7 +5,7 @@ import json
 import os
 
 params_path = "params.yaml"
-scheme_path = os.path.join("prediction_services", "scheme.json")
+schema_path = os.path.join("prediction_services", "schema.json")
 
 
 class NotInRange(Exception):
@@ -43,22 +43,22 @@ def predict(data):
         return "Unexpected Result"
 
 
-def get_scheme(scheme_path=scheme_path):
-    with open(scheme_path) as json_file:
-        scheme = json.load(json_file)
-    return scheme
+def get_schema(schema_path=schema_path):
+    with open(schema_path) as json_file:
+        schema = json.load(json_file)
+    return schema
 
 
 def validate_input(dict_request):
     def _validate_cols(col):
-        scheme = get_scheme()
-        actual_cols = scheme.keys()
+        schema = get_schema()
+        actual_cols = schema.keys()
         if col not in actual_cols:
             raise NotInColumn
 
     def _validate_values(col, val):
-        scheme = get_scheme()
-        if not (scheme[col]["min"] <= float(dict_request[col]) <= scheme[col]["max"]):
+        schema = get_schema()
+        if not (schema[col]["min"] <= float(dict_request[col]) <= schema[col]["max"]):
             raise NotInRange
 
     for col, val in dict_request.items():
@@ -84,5 +84,5 @@ def api_response(dict_request):
             response = {"response": response}
             return response
     except Exception as e:
-        response = {"the_expected_range": get_scheme(), "response": str(e)}
+        response = {"the_expected_range": get_schema(), "response": str(e)}
         return response
