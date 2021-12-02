@@ -17,8 +17,9 @@ git add .
 
 git commit -m "first commit"
 
-one liner:- git add . && git commit -m "message"
 
 git status
 
 Push to your repo
+
+one liner:- git add . && git commit -m "message" && git push origin branch
