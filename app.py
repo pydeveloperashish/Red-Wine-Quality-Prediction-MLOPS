@@ -25,7 +25,7 @@ def predict(data):
     model = joblib.load(model_dir_path)
     prediction = model.predict(data)
     print(prediction)
-    return int(prediction)
+    return prediction[0]
 
 
 def api_response(request):
