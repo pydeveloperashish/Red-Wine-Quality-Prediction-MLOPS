@@ -9,3 +9,4 @@ wrapt
 flake8
 flask
 gunicorn
+mlflow
